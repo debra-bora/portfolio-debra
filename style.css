@@ -1,0 +1,969 @@
+/* ------------------------------ */
+/* PARAMÈTRES GÉNÉRAUX            */
+/* ------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: 90px;
+}
+
+body {
+    background-color: #0d1117;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ------------------------------ */
+/* NAVIGATION                     */
+/* ------------------------------ */
+
+nav {
+    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(13, 17, 23, 0.92);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+/* LOGO ANIMÉ */
+
+.logo {
+    text-decoration: none;
+}
+
+.logo-cyber {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #00e5ff;
+
+    transform: rotate(45deg);
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.3),
+        inset 0 0 10px rgba(0, 229, 255, 0.1);
+}
+
+.logo-cyber span {
+    color: #00e5ff;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    transform: rotate(-45deg);
+
+    transition: 0.4s;
+}
+
+.logo:hover .logo-cyber {
+    transform: rotate(135deg);
+
+    background-color: rgba(0, 229, 255, 0.08);
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.6),
+        inset 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+.logo:hover .logo-cyber span {
+    transform: rotate(-135deg);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+
+    gap: 40px;
+
+    list-style: none;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+nav a.active {
+    color: #00e5ff;
+}
+
+
+/* ------------------------------ */
+/* ACCUEIL                        */
+/* ------------------------------ */
+
+.accueil {
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 8%;
+
+    position: relative;
+}
+
+.presentation {
+    max-width: 850px;
+}
+
+.bonjour {
+    color: #00e5ff;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.presentation h1 {
+    font-size: 80px;
+
+    margin-bottom: 15px;
+}
+
+.presentation h2 {
+    font-size: 38px;
+
+    margin-bottom: 30px;
+}
+
+.presentation h2 span {
+    color: #00e5ff;
+}
+
+.description {
+    max-width: 750px;
+
+    color: #b8c0cc;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin: 0 auto 40px;
+}
+
+.bouton {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    color: #00e5ff;
+
+    border: 2px solid #00e5ff;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+.bouton:hover {
+    background-color: #00e5ff;
+
+    color: #0d1117;
+
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+
+/* PETITE FLÈCHE EN BAS */
+
+.scroll {
+    position: absolute;
+
+    bottom: 25px;
+
+    color: #00e5ff;
+
+    font-size: 35px;
+}
+
+
+/* ------------------------------ */
+/* À PROPOS                       */
+/* ------------------------------ */
+
+.apropos {
+    min-height: 100vh;
+
+    padding: 90px 8%;
+
+    background-color: #10161e;
+}
+
+.titre-section {
+    text-align: center;
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.titre-section span {
+    color: #00e5ff;
+}
+
+
+/* PETITE LIGNE CYAN */
+
+.ligne {
+    width: 75px;
+    height: 2px;
+
+    background-color: #00e5ff;
+
+    margin: 0 auto 60px;
+}
+
+
+/* CONTENU À PROPOS */
+
+.apropos-contenu {
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+.apropos-texte {
+    max-width: 800px;
+
+    margin-bottom: 60px;
+}
+
+.apropos-texte h3 {
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.apropos-texte p {
+    color: #b8c0cc;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* ------------------------------ */
+/* CARTES                         */
+/* ------------------------------ */
+
+.infos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.info {
+    min-height: 190px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #111a23;
+
+    border: 1px solid #15526a;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.info:hover {
+    transform: translateY(-8px);
+
+    border-color: #00e5ff;
+
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+.icone {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.info h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #b8c0cc;
+
+    font-size: 17px;
+}
+
+/* ------------------------------ */
+/* COMPÉTENCES                    */
+/* ------------------------------ */
+
+.competences {
+    min-height: 100vh;
+
+    padding: 90px 8%;
+
+    background-color: #0d1117;
+}
+
+.intro-competences {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+    color: #b8c0cc;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* GRILLE */
+
+.grille-competences {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* CARTE */
+
+.carte-competence {
+    padding: 35px;
+
+    background-color: #111820;
+
+    border: 1px solid #263442;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.carte-competence:hover {
+    transform: translateY(-7px);
+
+    border-color: #00e5ff;
+
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.12);
+}
+
+.competence-icone {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.carte-competence h3 {
+    font-size: 24px;
+
+    margin-bottom: 25px;
+}
+
+
+/* PETITES ÉTIQUETTES */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.tags span {
+    padding: 8px 13px;
+
+    background-color: rgba(0, 229, 255, 0.07);
+
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 20px;
+
+    color: #bdeff5;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.tags span:hover {
+    background-color: #00e5ff;
+
+    color: #0d1117;
+
+    border-color: #00e5ff;
+}
+
+/* ------------------------------ */
+/* PROJETS                        */
+/* ------------------------------ */
+
+.projets {
+    min-height: 100vh;
+    padding: 90px 8%;
+    background-color: #10161e;
+}
+
+.intro-projets {
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    text-align: center;
+    color: #b8c0cc;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.grille-projets {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.carte-projet {
+    position: relative;
+
+    padding: 40px;
+
+    background-color: #111a23;
+
+    border: 1px solid #263442;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.carte-projet:hover {
+    transform: translateY(-8px);
+
+    border-color: #00e5ff;
+
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.12);
+}
+
+.numero-projet {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    color: rgba(0, 229, 255, 0.15);
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.carte-projet h3 {
+    position: relative;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.carte-projet p {
+    position: relative;
+
+    color: #b8c0cc;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+/* ------------------------------ */
+/* PARCOURS                       */
+/* ------------------------------ */
+
+.parcours {
+    min-height: 100vh;
+    padding: 90px 8%;
+    background-color: #0d1117;
+}
+
+.intro-parcours {
+    max-width: 700px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    color: #b8c0cc;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* TIMELINE */
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding-left: 50px;
+
+    border-left: 2px solid #263442;
+}
+
+.etape {
+    position: relative;
+
+    margin-bottom: 60px;
+}
+
+.point {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    left: -59px;
+    top: 8px;
+
+    background-color: #00e5ff;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+}
+
+.contenu-etape {
+    padding: 30px;
+
+    background-color: #111820;
+
+    border: 1px solid #263442;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.contenu-etape:hover {
+    border-color: #00e5ff;
+
+    transform: translateX(8px);
+
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.10);
+}
+
+.date {
+    display: inline-block;
+
+    color: #00e5ff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.contenu-etape h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.contenu-etape h4 {
+    color: #8c98a5;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+.contenu-etape p {
+    color: #b8c0cc;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+/* ------------------------------ */
+/* CONTACT                        */
+/* ------------------------------ */
+
+.contact {
+    min-height: 85vh;
+
+    padding: 100px 8%;
+
+    background-color: #10161e;
+}
+
+.intro-contact {
+    max-width: 650px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+    color: #b8c0cc;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* CARTES CONTACT */
+
+.contact-contenu {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.contact-carte {
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background-color: #111a23;
+
+    border: 1px solid #263442;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.contact-carte:hover {
+    transform: translateY(-8px);
+
+    border-color: #00e5ff;
+
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.12);
+}
+
+.contact-icone {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.contact-carte h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.contact-carte p {
+    color: #8c98a5;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+.contact-carte a {
+    color: #00e5ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.contact-carte a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------ */
+/* FOOTER                         */
+/* ------------------------------ */
+
+footer {
+    padding: 45px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #090d12;
+
+    border-top: 1px solid #263442;
+
+    color: #8c98a5;
+}
+
+.footer-logo {
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #00e5ff;
+}
+
+.retour-haut {
+    color: #00e5ff;
+
+    text-decoration: none;
+}
+
+/* ------------------------------ */
+/* ANIMATIONS                     */
+/* ------------------------------ */
+
+.carte-competence,
+.carte-projet,
+.etape,
+.contact-carte {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.carte-competence.visible,
+.carte-projet.visible,
+.etape.visible,
+.contact-carte.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* ------------------------------ */
+/* MINI TERMINAL ACCUEIL          */
+/* ------------------------------ */
+
+.terminal-accueil {
+    margin: 0 auto 30px;
+
+    color: #00e5ff;
+
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+
+    min-height: 25px;
+}
+
+.terminal-symbole {
+    margin-right: 8px;
+}
+
+.curseur {
+    animation: clignoter 0.8s infinite;
+}
+
+@keyframes clignoter {
+
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.boutons-accueil {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bouton-secondaire {
+    background-color: #00e5ff;
+    color: #0d1117;
+}
+
+.bouton-secondaire:hover {
+    background-color: transparent;
+    color: #00e5ff;
+}
+
+/* ------------------------------ */
+/* PARCOURS COMPLET               */
+/* ------------------------------ */
+
+.afficher-parcours {
+    margin: 20px 0 50px;
+}
+
+#bouton-parcours {
+    padding: 12px 20px;
+
+    background: transparent;
+    color: #8c98a5;
+
+    border: 1px solid #263442;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+#bouton-parcours:hover {
+    color: #00e5ff;
+    border-color: #00e5ff;
+}
+
+
+/* Les anciennes expériences sont cachées au départ */
+
+.ancien-parcours {
+    display: none;
+}
+
+
+/* Cette classe sera ajoutée par JavaScript */
+
+.ancien-parcours.ouvert {
+    display: block;
+}
+
+
+/* Anciennes expériences plus discrètes */
+
+.contenu-secondaire {
+    opacity: 0.75;
+    padding: 22px 25px;
+}
+
+.contenu-secondaire h3 {
+    font-size: 19px;
+}
+
+.contenu-secondaire p {
+    font-size: 15px;
+}
+
+.point-secondaire {
+    width: 10px;
+    height: 10px;
+
+    left: -56px;
+
+    background-color: #58616b;
+
+}
+
+
+/* ------------------------------ */
+/* VERSION PETIT ÉCRAN            */
+/* ------------------------------ */
+
+@media (max-width: 800px) {
+
+    .contact-contenu {
+    grid-template-columns: 1fr;
+}
+
+footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+    .grille-projets {
+    grid-template-columns: 1fr;
+}
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .presentation h1 {
+        font-size: 55px;
+    }
+
+    .presentation h2 {
+        font-size: 28px;
+    }
+
+    .infos {
+        grid-template-columns: 1fr;
+    }
+}
